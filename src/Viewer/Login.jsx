@@ -6,13 +6,11 @@ function Login() {
   useEffect(() => {
     if (localStorage.getItem("accessToken")) {
       window.location.href = window.location.href + "profile";
+    } else {
+      Spotify.authReq;
     }
   }, []);
-  return (
-    <div>
-      <button onClick={Spotify.authReq}>Login</button>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default Login;
