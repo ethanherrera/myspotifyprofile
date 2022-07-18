@@ -13,12 +13,36 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/tracks" element={<Tracks />} />
-          <Route path="/artists" element={<Artists />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/recent" element={<Recent />} />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/"
+            element={<Login />}
+          />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/profile"
+            element={<Profile />}
+          />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/tracks"
+            element={<Tracks />}
+          />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/artists"
+            element={<Artists />}
+          />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/create"
+            element={<Create />}
+          />
+          <Route
+            basemname={`/${process.env.PUBLIC_URL}`}
+            path="/recent"
+            element={<Recent />}
+          />
         </Routes>
       </BrowserRouter>
       <Navbar />

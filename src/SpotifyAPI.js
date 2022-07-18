@@ -1,4 +1,4 @@
-export const homepageLocal = "https://localhost:3000";
+export const homepageLocal = "http://localhost:3000";
 export const homepage = "https://myspotifyprofile.com";
 const redirectUrl = homepage + "/profile";
 const clientId = "9d241ca5d04e44c8ab7326cd3d68718b";

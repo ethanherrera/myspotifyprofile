@@ -1,4 +1,5 @@
 import React from "react";
+import { homepage } from "../SpotifyAPI";
 import {
   IoAddCircleOutline,
   IoMusicalNotes,
@@ -39,7 +40,7 @@ function Navbar() {
 }
 
 function NavbarButton({ icon, name, ext }) {
-  const homeUrl = "http://localhost:3000/";
+  const homeUrl = homepage + "/";
   return (
     <>
       <a href={homeUrl + ext}>
