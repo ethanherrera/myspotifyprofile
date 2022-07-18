@@ -85,6 +85,11 @@ function TopTracksPlaylist({ userId }) {
     medium: "Recent",
     long: "All Time",
   };
+  const rangeImgSrc = {
+    short: Spotify.homepage + "/mostRecentTopTracks.jpg",
+    medium: Spotify.homepage + "/recentTopTracks.jpg",
+    long: Spotify.homepage + "/allTimeTopTracks.jpg",
+  };
   function changeRange(e) {
     setSelectedRange(e.target.value);
     window.scrollTo(0, 0);
@@ -108,7 +113,13 @@ function TopTracksPlaylist({ userId }) {
           ))}
         </select>
       </div>
-      <div onClick={createPlaylist}>TopTracksPlaylist</div>
+      <div onClick={createPlaylist}>
+        <img
+          src={rangeImgSrc[selectedRange]}
+          alt="Create Playlist"
+          className=" w-36 h-36"
+        />
+      </div>
     </>
   );
 }
