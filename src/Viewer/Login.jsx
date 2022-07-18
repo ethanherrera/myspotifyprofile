@@ -7,7 +7,7 @@ function Login() {
     if (localStorage.getItem("accessToken")) {
       window.location.href = window.location.href + "profile";
     } else {
-      Spotify.authReq;
+      Spotify.authReq();
     }
   }, []);
   return <div></div>;
