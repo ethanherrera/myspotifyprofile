@@ -34,15 +34,3 @@ function getAccessToken(hash) {
   }, {});
   return paramsSplitUp;
 }
-
-export function callApi(method, url, body, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open(method, url, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader(
-    "Authorization",
-    "Bearer " + localStorage.getItem("accessToken")
-  );
-  xhr.send(body);
-  xhr.onload = callback;
-}

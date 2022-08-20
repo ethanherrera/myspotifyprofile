@@ -113,8 +113,9 @@ function TopTracksPlaylist({ userId }) {
           ))}
         </select>
       </div>
-      <div onClick={createPlaylist}>
+      <div>
         <img
+          onClick={createPlaylist}
           src={rangeImgSrc[selectedRange]}
           alt="Create Playlist"
           className=" w-36 h-36"

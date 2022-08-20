@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import * as Spotify from "../SpotifyAPI";
 import TopTracksPlaylist from "./Creations/TopTracksPlaylist";
+import RecentTracksPlaylist from "./Creations/RecentTracksPlaylist";
 
 function Create() {
   const [userId, setUserId] = useState("");
@@ -27,11 +28,10 @@ function Create() {
   });
 
   return (
-    <>
-      <div>
-        <TopTracksPlaylist userId={userId} />
-      </div>
-    </>
+    <div className="flex-row">
+      <TopTracksPlaylist userId={userId} />
+      <RecentTracksPlaylist userId={userId} />
+    </div>
   );
 }
 

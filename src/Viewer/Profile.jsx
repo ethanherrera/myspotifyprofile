@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import * as Spotify from "../SpotifyAPI";
 
@@ -12,24 +13,15 @@ function Profile() {
   });
 
   useEffect(() => {
-    function handleProfileRes() {
-      if (this.status === 200) {
-        const data = JSON.parse(this.responseText);
-        setProfileData(data);
-      } else if (this.status === 401) {
-        // Spotify.refreshAccessToken();
-        Spotify.authReq();
-      } else {
-        console.log(this.responseText);
-        alert(this.responseText);
-      }
-    }
-    Spotify.callApi(
-      "GET",
-      "https://api.spotify.com/v1/me",
-      null,
-      handleProfileRes
-    );
+    const headers = {
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      "Content-Type": "application/json",
+    };
+    axios
+      .get("https://api.spotify.com/v1/me", {
+        headers: headers,
+      })
+      .then((res) => setProfileData(res.data));
   }, []);
 
   return (
